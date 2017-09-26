@@ -1,0 +1,34 @@
+{
+  "name": "mnabialek/laravel-test-css",
+  "description": "Allows to add some custom CSS styles when running tests",
+  "require": {
+    "laravel/framework": "5.*"
+  },
+  "keywords": [
+    "laravel",
+    "dusk testing",
+    "dusk",
+    "dusk fonts",
+    "fonts testing",
+    "laravel test css"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marcin Nabiałek",
+      "email": "dev@nabialek.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Mnabialek\\LaravelTestCss\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mnabialek\\LaravelTestCss\\Providers\\LaravelTestCss"
+      ]
+    }
+  }
+}
