@@ -21,7 +21,7 @@ This package allows you to easily add custom CSS style when running PhpUnit test
     
 3. In `app/Http/Kernel.php` file add:
 
-   ```phprep
+   ```php
    \Mnabialek\LaravelTestCss\Middleware\LaravelTestCss::class,
    ```
     
