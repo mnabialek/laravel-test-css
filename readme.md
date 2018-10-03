@@ -19,15 +19,7 @@ This package allows you to easily add custom CSS style when running PhpUnit test
      
    Laravel 5.5 uses Package Auto-Discovery and it will automatically load this service provider so you don't need to add anything into above file.
     
-3. In `app/Http/Kernel.php` file add:
-
-   ```php
-   \Mnabialek\LaravelTestCss\Middleware\LaravelTestCss::class,
-   ```
-    
-    to `$middleware` array.
-    
-4. **Optional step:** If you need to adjust style rule you can add `LARAVEL_TEST_CSS_STYLE=` in your `.env` file or publish configuration file. By default style rule looks like this:
+3. **Optional step:** If you need to adjust style rule you can add `LARAVEL_TEST_CSS_STYLE=` in your `.env` file or publish configuration file. By default style rule looks like this:
 
    ```css
    html * { font-family: sans-serif !important; }
@@ -37,4 +29,4 @@ This package allows you to easily add custom CSS style when running PhpUnit test
 
 ### Usage
    
-When you added global middleware, this package will automatically add custom styles just before `</head>` HTMl tag. Be aware this package add stylesheets only when environment is set to `testing` and when response is in `text/html` format.   
+This package will automatically add custom styles just before `</head>` HTMl tag. Be aware this package add stylesheets only when environment is set to `testing` and when response is in `text/html` format.   

@@ -2,7 +2,9 @@
 
 namespace Mnabialek\LaravelTestCss\Providers;
 
+use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\ServiceProvider;
+use Mnabialek\LaravelTestCss\Middleware\LaravelTestCss as LaravelTestCssMiddleware;
 
 class LaravelTestCss extends ServiceProvider
 {
@@ -18,6 +20,8 @@ class LaravelTestCss extends ServiceProvider
 
         // register files to be published
         $this->publishes($this->getFilesToPublish());
+
+        $this->registerMiddleware(LaravelTestCssMiddleware::class);
     }
 
     /**
@@ -30,5 +34,15 @@ class LaravelTestCss extends ServiceProvider
         return [
             __DIR__ . '/../../publish/config/laravel_test_css.php' => config_path('laravel_test_css.php'),
         ];
+    }
+
+    /**
+     * Register given middleware class.
+     *
+     * @param string $middleware
+     */
+    protected function registerMiddleware($middleware)
+    {
+        $this->app[Kernel::class]->pushMiddleware($middleware);
     }
 }
