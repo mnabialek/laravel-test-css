@@ -17,7 +17,7 @@ This package allows you to easily add custom CSS style when running PhpUnit test
    Mnabialek\LaravelTestCss\Providers\LaravelTestCss::class,
    ```
      
-   Laravel 5.5 uses Package Auto-Discovery and it will automatically load this service provider so you don't need to add anything into above file.
+   Laravel 5.5 and later uses Package Auto-Discovery and it will automatically load this service provider so you don't need to add anything into above file.
     
 3. **Optional step:** If you need to adjust style rule you can add `LARAVEL_TEST_CSS_STYLE=` in your `.env` file or publish configuration file. By default style rule looks like this:
 
