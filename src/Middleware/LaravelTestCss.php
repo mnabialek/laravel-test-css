@@ -5,6 +5,7 @@ namespace Mnabialek\LaravelTestCss\Middleware;
 use Closure;
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 
 class LaravelTestCss
 {
@@ -37,7 +38,7 @@ class LaravelTestCss
         /** @var Response $response */
         $response = $next($request);
         if ($response instanceof Response && app()->runningUnitTests() &&
-            str_contains($response->headers->get('Content-Type'), 'text/html')) {
+            Str::contains($response->headers->get('Content-Type'), 'text/html')) {
             $content = $response->getContent();
             if (($head = mb_strpos($content, '</head>')) !== false) {
                 $response->setContent(mb_substr($content, 0, $head) .
