@@ -15,8 +15,10 @@ class LaravelTestCss extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../../publish/config/laravel_test_css.php',
-            'laravel_test_css');
+        $this->mergeConfigFrom(
+            __DIR__ . '/../../publish/config/laravel_test_css.php',
+            'laravel_test_css'
+        );
 
         // register files to be published
         $this->publishes($this->getFilesToPublish());
